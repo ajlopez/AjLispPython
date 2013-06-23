@@ -1,4 +1,4 @@
 
 
-def evaluate(arg):
+def evaluate(arg, context = None):
     return arg
