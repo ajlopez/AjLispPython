@@ -7,5 +7,8 @@ class Context:
         self.__values[name] = value
         
     def get(self, name):
-        return self.__values[name]
+        try:
+            return self.__values[name]
+        except KeyError:
+            return None
         

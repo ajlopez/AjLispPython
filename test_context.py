@@ -9,6 +9,10 @@ class ContextTests(unittest.TestCase):
         context.set('foo', 'bar')
         self.assertEqual('bar', context.get('foo'))
     
+    def test_get_undefined_value_as_none(self):
+        context = Context()
+        self.assertIsNone(context.get('foo'))
+        
 if __name__ == '__main__':
     unittest.main()
     
