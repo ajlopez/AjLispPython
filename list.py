@@ -17,6 +17,10 @@ class List:
         
         return result
         
+    def evaluate(self, context):
+        form = self.__head.evaluate(context)
+        return form.apply(context, self.__tail)
+        
 def listAsString(list):
     head = list.head()
     
