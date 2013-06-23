@@ -9,3 +9,19 @@ class List:
         
     def tail(self):
         return self.__tail
+
+    def asString(self):
+        result = "("
+        result += listAsString(self)            
+        result += ")"
+        
+        return result
+        
+def listAsString(list):
+    result = str(list.head())
+    
+    if list.tail():
+        result += " "
+        result += listAsString(list.tail())
+        
+    return result
