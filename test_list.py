@@ -36,6 +36,16 @@ class ListTests(unittest.TestCase):
         list = List.make(1, 2, 3)
         result = list.asString()
         self.assertEqual("(1 2 3)", result)
+    
+    def test_make_list_with_head_none(self):
+        list = List.make(None)
+        result = list.asString()
+        self.assertEqual("(nil)", result)
+    
+    def test_make_list_with_nested_list(self):
+        list = List.make(1, List.make(2, 3), 4)
+        result = list.asString()
+        self.assertEqual("(1 (2 3) 4)", result)
         
 if __name__ == '__main__':
     unittest.main()

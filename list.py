@@ -32,7 +32,10 @@ def listAsString(list):
     if isinstance(head, List):
         result = head.asString()
     else:
-        result = str(head)
+        if head == None:
+            result = 'nil'
+        else:
+            result = str(head)
     
     if list.tail():
         result += " "
