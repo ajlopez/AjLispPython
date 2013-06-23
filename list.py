@@ -20,9 +20,9 @@ class List:
 def listAsString(list):
     head = list.head()
     
-    try:
+    if isinstance(head, List):
         result = head.asString()
-    except AttributeError:
+    else:
         result = str(head)
     
     if list.tail():
