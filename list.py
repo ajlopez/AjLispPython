@@ -1,8 +1,13 @@
 
+from collections import deque
+
 class List:
     def __init__(self, head, tail):
         self.__head = head
         self.__tail = tail
+        
+    def make(*args):
+        return makeList(deque(args))
         
     def head(self):
         return self.__head
@@ -34,3 +39,10 @@ def listAsString(list):
         result += listAsString(list.tail())
         
     return result
+    
+def makeList(queue):
+    if len(queue):
+        head = queue.popleft()
+        return List(head, makeList(queue))
+    
+    return None
