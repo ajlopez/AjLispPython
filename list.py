@@ -18,7 +18,12 @@ class List:
         return result
         
 def listAsString(list):
-    result = str(list.head())
+    head = list.head()
+    
+    if (hasattr(head, 'asString')):
+        result = head.asString()
+    else:
+        result = str(head)
     
     if list.tail():
         result += " "

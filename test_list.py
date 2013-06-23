@@ -27,6 +27,11 @@ class ListTests(unittest.TestCase):
         result = list.asString()
         self.assertEqual("(1 2)", result)       
         
+    def test_list_with_list_head_as_string(self):
+        list = List(List(1, None), List(2, None))
+        result = list.asString()
+        self.assertEqual("((1) 2)", result)       
+        
 if __name__ == '__main__':
     unittest.main()
     
